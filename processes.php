@@ -7,6 +7,7 @@ class DbCon extends DatabaseInterface
     private $password;
     private $dbname;
     private $charset;
+    private $pdo;
    
     public function __connect(){
         $this->servername="localhost";
@@ -16,11 +17,13 @@ class DbCon extends DatabaseInterface
         $this->charset="utf8mb4";
 
     }
-    protected function connect(){
+    public function connect(){
         try{
         $dsn="mysqli:host=".$this->servername.";dbname=" .$this->dbname. ";charset=".$this->charset;
-        $pdo =new PDO($dsn, $this->username  ,$this->password);
-        return $pdo;
+        $this->pdo =new PDO($dsn, $this->username  ,$this->password);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $this->pdo;
+
         }
             catch (PDOException $e) {
                 die("Connection failed: " . $e->getMessage());
@@ -29,8 +32,14 @@ class DbCon extends DatabaseInterface
     
     }
 
-   
+public function disconnect()
+    {
+        // Simply set the PDO instance to null to close the connection
+        $this->pdo = null;
     }
+}
+   
+    
      
 
        
