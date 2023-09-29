@@ -13,7 +13,7 @@ class DbCon extends DatabaseInterface
         $this->servername="localhost";
         $this->username="root";
         $this->password="";
-        $this->dbname="user_data";
+        $this->dbname="user.data";
         $this->charset="utf8mb4";
 
     }

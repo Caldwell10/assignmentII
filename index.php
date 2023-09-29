@@ -6,7 +6,7 @@
     <title>Form</title>
 </head>
 <body>
-<form method="post" action="processes.php">
+<form method="post" action="formHandling.php">
         <label for="full_name">Full Name:</label>
         <input type="text" id="full_name" name="full_name" required><br><br>
 
@@ -19,8 +19,10 @@
         <label for="address">Address:</label>
         <textarea id="address" name="address" rows="4" required></textarea><br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" name="Submit" value="Submit">
     </form>
+
+    
 
 </body>
 </html>
