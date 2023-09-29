@@ -37,8 +37,29 @@ public function disconnect()
         // Simply set the PDO instance to null to close the connection
         $this->pdo = null;
     }
+
+    
+
+public function insertUserData($full_name,$username,$email,$address){
+  try{
+    $pdo=$this->connect();
+    
+    $stmt = $pdo->prepare("INSERT INTO users (full_name, username, email, address) VALUES (:full_name, :username, :email, :address)");
+
+    $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':address', $address, PDO::PARAM_STR);
+
+    $stmt->execute();
+
+  }catch(PDOException $e){
+     echo "Error inserting data ".$e->getMessage();
+  }
+
 }
-   
+
+} 
     
      
 
