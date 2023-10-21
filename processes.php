@@ -53,6 +53,8 @@ class DbCon implements DatabaseInterface
         }
     }
 }
+$database = new DbCon();
+$pdo = $database->connect();
 ?>
 
     
