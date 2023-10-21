@@ -8,8 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Submit'])) {
     $address = $_POST['address'];
 
     $db = new DbCon();
-    $db->connect();
     $db->insertUserData($full_name, $username, $email, $address);
-    $db->disconnect();
 }
 ?>
+
