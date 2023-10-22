@@ -16,11 +16,19 @@
   box-sizing :border-box;
   font-family: 'Poppins','sans-seriff';
 }
-.body {
-        background-image: url('images/img1.jpg'); 
-        background-size: cover; 
-        background-repeat: no-repeat; 
-    }
+
+body {
+        background-color: #e4e9f7; /* Set the background color to a light blue */
+        color: #333; /* Set the text color to dark gray */
+        font-family: Arial, sans-serif; /* Define the font-family */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        line-height: 1.6; /* Set the line height for better readability */
+ }
+    
+   
+
+
     
 .container{
     display:flex;
@@ -88,7 +96,7 @@ box-shadow: 0 0 128px 0 rgba(0,0,0,0.1);
 }
 .links  {
     margin-bottom:15px;
-};  
+}
 
 /************* Home page *********/
 

@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Submit'])) {
 
     $db = new DbCon();
     $db->insertUserData($full_name, $username, $email, $address);
+    header("Location: ViewUsers.php");
+    exit;
 }
 ?>
 
